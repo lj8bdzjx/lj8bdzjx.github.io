@@ -1,0 +1,1171 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日大赛-赛事观看与赛程解析</title>
+<meta name="description" content="每日大赛在线观看每日大赛聚焦每日大赛赛程、参赛作品、评审规则与观看入口，整理11月5日至8日的赛况、榜单变化与选手回应，提供可核对的时间线与深度解析。">
+<meta name="keywords" content="每日大赛在线观看每日大赛">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23182b45'/%3E%3Cpath d='M18 44V20h7l7 12 7-12h7v24h-6V30l-8 13-8-13v14z' fill='%23f2b544'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#182b45;
+  --ink-soft:#3c4f68;
+  --paper:#f6f4ef;
+  --card:#ffffff;
+  --line:#dcd7cc;
+  --line-soft:#eae5da;
+  --accent:#c8562b;
+  --accent-soft:#f7e3d5;
+  --gold:#b8862a;
+  --gold-soft:#f6ecd2;
+  --teal:#2f6d63;
+  --teal-soft:#e0efeb;
+  --radius:10px;
+  --radius-sm:6px;
+  --shadow:0 1px 2px rgba(24,43,69,.06),0 8px 24px -12px rgba(24,43,69,.18);
+  --shadow-sm:0 1px 2px rgba(24,43,69,.08);
+  --font:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;
+  --sp:clamp(16px,2.2vw,28px);
+  --sticky-offset:104px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:var(--font);
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+}
+img{max-width:100%;display:block}
+a{color:var(--ink);text-decoration:none}
+a:hover{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:3px}
+h1,h2,h3,h4{margin:0;line-height:1.35;font-weight:700}
+p{margin:0 0 12px}
+ul,ol{margin:0 0 12px;padding-left:1.3em}
+li{margin-bottom:6px}
+section[id],div[id]{scroll-margin-top:var(--sticky-offset)}
+
+/* ============ 吸顶公告条 ============ */
+.topbar{
+  position:sticky;top:0;z-index:60;
+  background:var(--ink);color:#eef1f5;
+  font-size:13px;
+}
+.topbar-inner{
+  max-width:1240px;margin:0 auto;padding:7px var(--sp);
+  display:flex;gap:14px;align-items:center;flex-wrap:wrap;
+}
+.topbar .badge{
+  background:var(--accent);color:#fff;border-radius:3px;
+  padding:1px 7px;font-size:12px;font-weight:700;letter-spacing:.5px;flex:none;
+}
+.topbar a{color:#f2b544}
+.topbar a:hover{color:#ffd27a;text-decoration:underline}
+.topbar .tb-date{color:#9fb0c4;margin-left:auto;flex:none}
+
+/* ============ 页头 ============ */
+.site-head{
+  position:sticky;top:37px;z-index:55;
+  background:rgba(246,244,239,.96);
+  border-bottom:1px solid var(--line);
+  backdrop-filter:blur(6px);
+}
+.head-inner{
+  max-width:1240px;margin:0 auto;padding:10px var(--sp);
+  display:flex;align-items:center;gap:18px;flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:10px;flex:none}
+.brand svg{width:38px;height:38px;flex:none}
+.brand-name{font-size:19px;font-weight:800;letter-spacing:.5px;color:var(--ink);line-height:1.2}
+.brand-sub{display:block;font-size:11px;font-weight:500;color:var(--ink-soft);letter-spacing:1.5px}
+.main-nav{display:flex;gap:2px;flex-wrap:wrap;align-items:center}
+.main-nav a{
+  font-size:14px;padding:6px 10px;border-radius:var(--radius-sm);
+  color:var(--ink-soft);white-space:nowrap;
+}
+.main-nav a:hover{background:var(--gold-soft);color:var(--ink)}
+.menu-btn{
+  display:none;background:none;border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:7px 11px;font:inherit;font-size:14px;color:var(--ink);cursor:pointer;align-items:center;gap:6px;
+}
+.menu-btn svg{width:16px;height:16px}
+.head-tools{margin-left:auto;display:flex;align-items:center;gap:10px;flex:none}
+.search-wrap{position:relative}
+.search-wrap input{
+  font:inherit;font-size:14px;padding:7px 12px 7px 32px;width:190px;
+  border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--ink);
+}
+.search-wrap input:focus{outline:2px solid var(--gold);outline-offset:1px}
+.search-wrap .s-icon{position:absolute;left:10px;top:50%;transform:translateY(-50%);width:15px;height:15px;pointer-events:none;color:var(--ink-soft)}
+.search-feedback{
+  display:none;position:absolute;top:calc(100% + 6px);left:0;width:280px;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-sm);
+  box-shadow:var(--shadow);padding:10px 12px;font-size:13px;color:var(--ink-soft);z-index:70;
+}
+.search-feedback.show{display:block}
+.search-feedback strong{color:var(--accent)}
+.btn-mini{
+  font-size:13px;padding:7px 14px;border-radius:999px;background:var(--ink);color:#fff;
+  border:1px solid var(--ink);white-space:nowrap;
+}
+.btn-mini:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+
+@media (max-width:960px){
+  .main-nav{
+    display:none;position:absolute;left:0;right:0;top:100%;
+    background:#fff;border-bottom:1px solid var(--line);
+    padding:8px var(--sp) 12px;flex-direction:column;align-items:stretch;gap:0;
+    box-shadow:var(--shadow);
+  }
+  .main-nav.open{display:flex}
+  .main-nav a{padding:10px 8px;border-radius:var(--radius-sm);border-bottom:1px solid var(--line-soft);font-size:15px}
+  .menu-btn{display:inline-flex}
+  .site-head{position:sticky;top:37px}
+  .head-inner{position:relative}
+  .head-tools{margin-left:auto}
+  .search-wrap input{width:150px}
+}
+@media (max-width:560px){
+  .topbar .tb-date{display:none}
+  .head-tools .btn-mini{display:none}
+  .search-wrap input{width:130px}
+  .brand-name{font-size:17px}
+}
+
+/* ============ 首屏 ============ */
+.hero{
+  background:
+    radial-gradient(1200px 400px at 85% -60px,rgba(184,134,42,.16),transparent 60%),
+    linear-gradient(160deg,#1b3049 0%,#223a57 55%,#2a4566 100%);
+  color:#eef1f5;position:relative;overflow:hidden;
+  border-bottom:1px solid #16283c;
+}
+.hero-inner{
+  max-width:1240px;margin:0 auto;padding:clamp(30px,5vw,60px) var(--sp);
+  display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
+  gap:clamp(22px,4vw,48px);align-items:center;
+}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:2px;
+  color:#f2b544;border:1px solid rgba(242,181,68,.45);border-radius:999px;
+  padding:4px 12px;margin-bottom:16px;
+}
+.hero h1{
+  font-size:clamp(27px,4vw,44px);letter-spacing:1px;margin-bottom:14px;color:#fff;
+}
+.hero-lead{font-size:clamp(15px,1.6vw,17px);color:#cfdae6;max-width:36em;margin-bottom:20px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.btn-primary{
+  display:inline-block;background:var(--gold);color:#1b2b3f;font-weight:700;
+  padding:11px 24px;border-radius:999px;font-size:15px;border:1px solid var(--gold);
+}
+.btn-primary:hover{background:#d9a83d;color:#1b2b3f}
+.btn-ghost{
+  display:inline-block;border:1px solid rgba(238,241,245,.5);color:#eef1f5;
+  padding:11px 22px;border-radius:999px;font-size:15px;
+}
+.btn-ghost:hover{border-color:#f2b544;color:#f2b544}
+.hero-stats{display:flex;gap:clamp(16px,3vw,34px);flex-wrap:wrap;border-top:1px solid rgba(238,241,245,.18);padding-top:18px}
+.hero-stats div{font-size:13px;color:#a9bacd}
+.hero-stats b{display:block;font-size:22px;color:#fff;font-weight:800;letter-spacing:.5px}
+.hero-visual{position:relative;min-height:260px}
+.hero-visual svg{width:100%;height:auto;display:block;filter:drop-shadow(0 12px 30px rgba(0,0,0,.25))}
+@media (max-width:820px){
+  .hero-inner{grid-template-columns:1fr;padding-top:34px;padding-bottom:34px}
+  .hero-visual{order:2;min-height:0;max-width:420px;margin:0 auto;width:100%}
+}
+
+/* ============ 布局 ============ */
+.layout{
+  max-width:1240px;margin:0 auto;padding:var(--sp) var(--sp) 0;
+  display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:clamp(20px,3vw,36px);
+  align-items:start;
+}
+.sidebar{position:sticky;top:calc(var(--sticky-offset) + 8px)}
+@media (max-width:1080px){
+  .layout{grid-template-columns:1fr}
+  .sidebar{position:static;order:2}
+  .main-col{order:1}
+}
+
+/* ============ 通用板块头 ============ */
+.panel{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:clamp(18px,2.6vw,28px);margin-bottom:var(--sp);box-shadow:var(--shadow-sm);
+}
+.sec-head{margin-bottom:16px}
+.sec-kicker{font-size:12px;letter-spacing:2px;color:var(--accent);font-weight:700;display:block;margin-bottom:5px}
+.sec-head h2{font-size:clamp(20px,2.4vw,25px);letter-spacing:.5px}
+.sec-head p{font-size:14px;color:var(--ink-soft);margin:6px 0 0;max-width:62em}
+
+/* 概览双栏 */
+.overview-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:20px}
+@media (max-width:700px){.overview-grid{grid-template-columns:1fr}}
+.overview-grid h3{font-size:16px;margin-bottom:8px}
+.stat-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0;padding:0;list-style:none}
+.stat-list li{
+  background:var(--paper);border:1px solid var(--line-soft);border-radius:var(--radius-sm);
+  padding:10px 12px;font-size:13px;color:var(--ink-soft);margin:0;
+}
+.stat-list b{display:block;color:var(--ink);font-size:17px}
+
+/* 精选卡片网格 */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.card{
+  border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;
+  display:flex;flex-direction:column;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:#c9c2b3}
+.card:hover h3{color:var(--accent)}
+.card img{width:100%;height:150px;object-fit:cover;border-bottom:1px solid var(--line-soft)}
+.card-body{padding:13px 14px 15px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card-body h3{font-size:15.5px;line-height:1.5}
+.card-meta{font-size:12px;color:var(--ink-soft);display:flex;gap:8px;flex-wrap:wrap}
+.card-meta .tag{background:var(--gold-soft);color:#7a5a17;border-radius:3px;padding:0 6px}
+.card-body p{font-size:13.5px;color:var(--ink-soft);margin:0;flex:1}
+
+/* 紧凑列表 */
+.tight-list{list-style:none;padding:0;margin:0}
+.tight-list li{
+  display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:baseline;
+  padding:11px 2px;border-bottom:1px dashed var(--line);margin:0;
+}
+.tight-list li:last-child{border-bottom:none}
+.tight-list .time{font-size:12.5px;color:var(--accent);font-variant-numeric:tabular-nums;font-weight:700;white-space:nowrap}
+.tight-list .t-title{font-size:14.5px;font-weight:600}
+.tight-list .t-desc{display:block;font-size:13px;color:var(--ink-soft);font-weight:400;margin-top:2px}
+.tight-list .src{font-size:12px;color:var(--ink-soft);white-space:nowrap}
+@media (max-width:600px){
+  .tight-list li{grid-template-columns:auto 1fr}
+  .tight-list .src{grid-column:2;font-size:11.5px}
+}
+
+/* 标签索引 */
+.tag-index{display:flex;flex-wrap:wrap;gap:9px}
+.tag-index a{
+  font-size:13.5px;padding:6px 13px;border-radius:999px;background:var(--paper);
+  border:1px solid var(--line);color:var(--ink-soft);
+}
+.tag-index a:hover{background:var(--teal-soft);border-color:var(--teal);color:var(--teal)}
+.tag-index a b{color:var(--accent);font-weight:700;margin-left:4px;font-size:12px}
+
+/* 深度解析 */
+.deep h3{font-size:18px;margin:22px 0 8px;padding-left:12px;border-left:4px solid var(--gold)}
+.deep h3:first-of-type{margin-top:6px}
+.deep p,.deep li{font-size:15.5px}
+.deep blockquote{
+  margin:16px 0;padding:14px 18px;background:var(--gold-soft);
+  border-left:4px solid var(--gold);border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+  font-size:15px;color:#4a3a12;
+}
+.deep blockquote cite{display:block;font-size:12.5px;color:#7a5a17;font-style:normal;margin-top:6px}
+.fact-table{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0 18px}
+.fact-table caption{text-align:left;font-size:13px;color:var(--ink-soft);padding-bottom:6px}
+.fact-table th,.fact-table td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.fact-table th{background:var(--paper);font-weight:700;font-size:13.5px;white-space:nowrap}
+.fact-table td.num{font-variant-numeric:tabular-nums}
+.claim-box{
+  display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;
+  border:1px solid var(--line);border-left:4px solid var(--accent);
+  border-radius:var(--radius-sm);padding:11px 14px;margin:10px 0;background:#fffdf9;
+  font-size:14px;
+}
+.claim-box .verdict{font-size:12px;font-weight:700;padding:2px 9px;border-radius:999px;white-space:nowrap}
+.v-true{background:var(--teal-soft);color:var(--teal)}
+.v-part{background:var(--gold-soft);color:#7a5a17}
+.v-open{background:var(--accent-soft);color:var(--accent)}
+
+/* 编号步骤 */
+.steps{list-style:none;counter-reset:st;padding:0;margin:0;display:grid;gap:12px}
+.steps li{
+  counter-increment:st;position:relative;padding:12px 16px 12px 52px;
+  background:var(--paper);border-radius:var(--radius-sm);border:1px solid var(--line-soft);margin:0;
+  font-size:14.5px;
+}
+.steps li::before{
+  content:counter(st,decimal-leading-zero);position:absolute;left:14px;top:12px;
+  font-weight:800;color:var(--gold);font-size:15px;font-variant-numeric:tabular-nums;
+}
+.steps b{display:block;margin-bottom:2px}
+
+/* 对照面板 */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.compare>div{padding:15px 17px}
+.compare .a{background:var(--teal-soft)}
+.compare .b{background:var(--accent-soft);border-left:1px solid var(--line)}
+.compare h4{font-size:15px;margin-bottom:8px}
+.compare ul{font-size:13.5px;padding-left:1.15em;margin:0}
+@media (max-width:640px){.compare{grid-template-columns:1fr}.compare .b{border-left:none;border-top:1px solid var(--line)}}
+
+/* FAQ */
+details.faq{
+  border:1px solid var(--line);border-radius:var(--radius-sm);margin-bottom:9px;background:#fff;
+  padding:0 15px;
+}
+details.faq[open]{border-color:#c9c2b3;background:#fffdf8}
+details.faq summary{
+  cursor:pointer;padding:12px 0;font-weight:600;font-size:15px;list-style:none;
+  display:flex;gap:10px;align-items:flex-start;
+}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::before{content:"Q";color:var(--accent);font-weight:800;flex:none}
+details.faq .faq-a{padding:0 0 13px 22px;font-size:14px;color:var(--ink-soft)}
+details.faq .faq-a p:last-child{margin-bottom:0}
+
+/* 评论 */
+.comment-list{display:grid;gap:12px}
+.comment{
+  display:grid;grid-template-columns:38px 1fr;gap:12px;
+  padding:13px 15px;border:1px solid var(--line-soft);border-radius:var(--radius);
+  background:#fff;
+}
+.avatar{
+  width:38px;height:38px;border-radius:50%;background:var(--ink);color:#f2b544;
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;flex:none;
+}
+.comment .c-head{font-size:13px;color:var(--ink-soft);display:flex;gap:8px;flex-wrap:wrap;align-items:baseline;margin-bottom:4px}
+.comment .c-name{font-weight:700;color:var(--ink);font-size:14px}
+.comment .c-body{font-size:14px;margin:0}
+.c-ref{font-size:12px;background:var(--paper);border:1px solid var(--line-soft);border-radius:3px;padding:0 6px;color:var(--ink-soft)}
+.c-like{color:var(--accent);font-size:12.5px}
+
+/* 资讯 */
+.news-list{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.news-list li{margin:0;border-left:3px solid var(--line);padding:2px 0 2px 14px}
+.news-list li:hover{border-left-color:var(--gold)}
+.news-list h3{font-size:15px}
+.news-list p{font-size:13.5px;color:var(--ink-soft);margin:3px 0}
+.news-list time{font-size:12px;color:var(--accent);font-weight:700}
+
+/* 榜单 */
+.rank{list-style:none;counter-reset:rk;padding:0;margin:0;display:grid;gap:8px}
+.rank li{
+  counter-increment:rk;display:grid;grid-template-columns:30px 1fr auto;gap:10px;
+  align-items:center;padding:9px 12px;border-radius:var(--radius-sm);
+  background:var(--paper);border:1px solid var(--line-soft);margin:0;font-size:14.5px;
+}
+.rank li::before{content:counter(rk);font-weight:800;color:var(--gold);font-size:16px}
+.rank li.top3{background:var(--gold-soft);border-color:#e6d5a8}
+.rank .rk-note{font-size:12px;color:var(--ink-soft);white-space:nowrap}
+@media (max-width:520px){.rank .rk-note{white-space:normal;font-size:11px}}
+
+/* 时间线 */
+.timeline{list-style:none;padding:0;margin:0;position:relative}
+.timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.timeline li{position:relative;padding:0 0 16px 28px;margin:0;font-size:14px}
+.timeline li::before{
+  content:"";position:absolute;left:2px;top:7px;width:12px;height:12px;border-radius:50%;
+  background:#fff;border:2px solid var(--gold);
+}
+.timeline .tl-time{font-weight:800;color:var(--ink);font-size:13.5px;display:block}
+.timeline .tl-text{color:var(--ink-soft);font-size:13.5px}
+
+/* 引语卡 */
+.quote-card{
+  background:var(--ink);color:#eef1f5;border-radius:var(--radius);padding:22px 24px;position:relative;overflow:hidden;
+}
+.quote-card::before{content:"“";position:absolute;right:16px;top:-14px;font-size:110px;color:rgba(242,181,68,.18);font-family:Georgia,serif}
+.quote-card p{font-size:16px;position:relative;z-index:1;margin-bottom:10px}
+.quote-card cite{font-size:13px;color:#f2b544;font-style:normal}
+
+/* 侧栏 */
+.side-block{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px 18px;margin-bottom:18px;box-shadow:var(--shadow-sm);
+}
+.side-block h2{font-size:15px;letter-spacing:.5px;margin-bottom:10px;padding-bottom:7px;border-bottom:1px solid var(--line-soft)}
+.side-nav{display:flex;flex-direction:column;gap:1px;font-size:14px}
+.side-nav a{padding:6px 9px;border-radius:var(--radius-sm);color:var(--ink-soft);border-left:2px solid transparent}
+.side-nav a:hover{background:var(--paper);color:var(--ink)}
+.side-nav a.active{background:var(--gold-soft);color:var(--ink);font-weight:700;border-left-color:var(--gold)}
+.side-block .mini-tag{display:flex;flex-wrap:wrap;gap:7px}
+.side-block .mini-tag a{font-size:12.5px;padding:3px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft)}
+.side-block .mini-tag a:hover{border-color:var(--teal);color:var(--teal)}
+.side-note{font-size:12.5px;color:var(--ink-soft);line-height:1.7}
+
+/* 页尾 */
+.site-foot{background:var(--ink);color:#c3cedb;margin-top:calc(var(--sp) + 8px);font-size:14px}
+.foot-inner{max-width:1240px;margin:0 auto;padding:clamp(26px,4vw,44px) var(--sp) 18px}
+.foot-top{display:grid;grid-template-columns:1.3fr 2fr;gap:clamp(22px,4vw,44px)}
+@media (max-width:820px){.foot-top{grid-template-columns:1fr}}
+.foot-brand{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.foot-brand svg{width:34px;height:34px;flex:none}
+.foot-brand b{font-size:18px;color:#fff;letter-spacing:.5px}
+.foot-desc{font-size:13.5px;color:#9fb0c4;max-width:26em;margin-bottom:8px}
+.foot-update{font-size:12.5px;color:#8399b0}
+.foot-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:520px){.foot-cols{grid-template-columns:1fr 1fr}}
+.foot-cols h3{font-size:13px;color:#f2b544;letter-spacing:1px;margin-bottom:8px}
+.foot-cols ul{list-style:none;padding:0;margin:0}
+.foot-cols li{margin-bottom:5px}
+.foot-cols a{color:#c3cedb;font-size:13.5px}
+.foot-cols a:hover{color:#f2b544}
+.foot-bottom{
+  border-top:1px solid rgba(195,206,219,.18);margin-top:24px;padding-top:14px;
+  font-size:12.5px;color:#8399b0;display:flex;gap:10px;flex-wrap:wrap;justify-content:space-between;
+}
+
+/* 回到顶部 */
+.to-top{
+  position:fixed;right:20px;bottom:22px;z-index:50;
+  width:44px;height:44px;border-radius:50%;border:1px solid var(--line);
+  background:#fff;color:var(--ink);font-size:18px;cursor:pointer;
+  box-shadow:var(--shadow);opacity:0;visibility:hidden;transform:translateY(8px);
+  transition:opacity .2s,transform .2s,visibility .2s;
+  display:flex;align-items:center;justify-content:center;
+}
+.to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+.to-top:hover{background:var(--gold);border-color:var(--gold);color:#1b2b3f}
+@media (max-width:560px){.to-top{right:12px;bottom:14px;width:40px;height:40px}}
+
+mark{background:var(--gold-soft);color:inherit;padding:0 2px;border-radius:2px}
+.small-note{font-size:12.5px;color:var(--ink-soft)}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 -->
+<div class="topbar" role="region" aria-label="站内公告">
+  <div class="topbar-inner">
+    <span class="badge">赛程</span>
+    <span>11月8日“深秋命题赛”第3轮已开票，赛果与评审细则同步更新 · <a href="/#latest">查看更新</a></span>
+    <span class="tb-date">2026-11-08 周日</span>
+  </div>
+</div>
+
+<!-- 页头 -->
+<header class="site-head">
+  <div class="head-inner">
+    <a class="brand" href="/#overview" aria-label="每日大赛在线观看每日大赛 首页">
+      <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#182b45"/>
+        <path d="M18 44V20h7l7 12 7-12h7v24h-6V30l-8 13-8-13v14z" fill="#f2b544"/>
+        <circle cx="49" cy="17" r="4" fill="#c8562b"/>
+      </svg>
+      <span>
+        <span class="brand-name">每日大赛</span>
+        <span class="brand-sub">SEASON&nbsp;03 · 观赛站</span>
+      </span>
+    </a>
+    <nav class="main-nav" id="mainNav" aria-label="主导航">
+      <a href="/#overview">赛况概览</a>
+      <a href="/#picks">今日精选</a>
+      <a href="/#latest">最新赛果</a>
+      <a href="/#channels">频道分类</a>
+      <a href="/#deep">深度解析</a>
+      <a href="/#guide">观赛指南</a>
+      <a href="/#faq">常见问题</a>
+      <a href="/#rank">积分榜</a>
+    </nav>
+    <div class="head-tools">
+      <div class="search-wrap">
+        <svg class="s-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input type="search" id="siteSearch" placeholder="搜赛项 / 选手 / 作品" aria-label="站内搜索" autocomplete="off">
+        <div class="search-feedback" id="searchFeedback" role="status" aria-live="polite"></div>
+      </div>
+      <a class="btn-mini" href="/#latest">今日赛果</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mainNav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        菜单
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- 首屏 -->
+<section class="hero" aria-labelledby="heroTitle">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <span class="hero-kicker">SEASON 03 · 11月8日 · 第3轮</span>
+      <h1 id="heroTitle">每日大赛在线观看每日大赛</h1>
+      <p class="hero-lead">每天一场、当晚出分是这套赛制的硬规则。11月5日起进入“深秋命题赛”阶段，七天七题，评委三人轮值，终评在11月12日晚。站内按赛项拆开赛程、原始评审表与选手回应，观赛入口和回放时间都写在对应条目里。</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="/#latest">看今天第3轮赛果</a>
+        <a class="btn-ghost" href="/#guide">怎么观赛与回放</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>7</b>本轮赛题数</div>
+        <div><b>126</b>在册参赛者</div>
+        <div><b>3</b>名轮值评委</div>
+        <div><b>21:30</b>当日出分时间</div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 440 330" role="img">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#f2b544"/>
+            <stop offset="1" stop-color="#c8562b"/>
+          </linearGradient>
+        </defs>
+        <rect x="24" y="40" width="300" height="212" rx="12" fill="#12233a" stroke="#33506f"/>
+        <rect x="24" y="40" width="300" height="34" rx="12" fill="#1b3350"/>
+        <circle cx="46" cy="57" r="5" fill="#c8562b"/>
+        <circle cx="64" cy="57" r="5" fill="#f2b544"/>
+        <circle cx="82" cy="57" r="5" fill="#2f6d63"/>
+        <text x="46" y="112" fill="#f2b544" font-size="13" font-family="sans-serif" letter-spacing="2">ROUND 03 / 21:30</text>
+        <text x="46" y="146" fill="#eef1f5" font-size="21" font-weight="700" font-family="sans-serif">深秋命题赛</text>
+        <rect x="46" y="166" width="120" height="8" rx="4" fill="#33506f"/>
+        <rect x="46" y="166" width="86" height="8" rx="4" fill="url(#g1)"/>
+        <text x="46" y="206" fill="#a9bacd" font-size="12" font-family="sans-serif">评委 3 / 作品 42 / 已交稿</text>
+        <g stroke="#33506f" stroke-width="1">
+          <line x1="250" y1="100" x2="250" y2="220"/>
+        </g>
+        <rect x="262" y="100" width="10" height="120" rx="5" fill="#c8562b"/>
+        <rect x="280" y="130" width="10" height="90" rx="5" fill="#f2b544"/>
+        <rect x="298" y="112" width="10" height="108" rx="5" fill="#2f6d63"/>
+        <g transform="translate(340,150)">
+          <circle r="46" fill="none" stroke="#33506f" stroke-width="10"/>
+          <circle r="46" fill="none" stroke="#f2b544" stroke-width="10" stroke-dasharray="186 103" stroke-linecap="round" transform="rotate(-90)"/>
+          <text y="2" text-anchor="middle" fill="#eef1f5" font-size="17" font-weight="700" font-family="sans-serif">64%</text>
+          <text y="20" text-anchor="middle" fill="#a9bacd" font-size="10" font-family="sans-serif">稿件完成</text>
+        </g>
+        <path d="M0 300 C110 270,230 320,440 282 L440 330 L0 330 Z" fill="#16283c"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- 主体布局 -->
+<div class="layout">
+  <main class="main-col">
+
+    <!-- 领域概览 -->
+    <section class="panel" id="overview" aria-labelledby="ovTitle">
+      <div class="sec-head">
+        <span class="sec-kicker">OVERVIEW</span>
+        <h2 id="ovTitle">七题七日的赛制概览</h2>
+        <p>按天推进、按题计分，是“深秋命题赛”与普通周赛最大的差别。下面这套数字取自主办方 11月7日 22:10 公布的赛事手册 v3.2，评审计分与出分时间都能在手册第 2、4 节对上。</p>
+      </div>
+      <div class="overview-grid">
+        <div>
+          <h3>赛制骨架与关键节点</h3>
+          <p>深秋命题赛共 7 个赛题日，11月5日开赛，11月12日晚终评。每日 12:00 发题，21:30 关闭提交并当夜出分；单题满分 100，按“完成度 40 / 表达 30 / 创新 20 / 规范 10”四项加权。三位轮值评委各有一票否决权，但否决须在次日 12:00 前写出不少于 120 字的书面理由，公示于评审纪要。</p>
+          <p>截至 11月8日 20:00，126 名在册参赛者中已有 42 人交齐第 3 轮作品，完成率 64%。分数不带入下一题，累计分只用于 11月12日的总榜，这一点在往届常被误读为“单题定生死”。</p>
+          <ul class="stat-list">
+            <li><b>7 天</b>赛题日，每日一题</li>
+            <li><b>100 分</b>单题满分，四项加权</li>
+            <li><b>21:30</b>当日提交截止</li>
+            <li><b>11-12</b>终评与总榜公布</li>
+          </ul>
+        </div>
+        <div>
+          <div class="quote-card">
+            <p>“单题分数当晚清算，最迟 23:00 公示四项明细。谁觉得算法有争议，第二天中午前把截图发到评审邮箱，我们当天回。”</p>
+            <cite>—— 轮值评委 · 陈砚舟，11月7日 评审说明会</cite>
+          </div>
+          <p style="margin-top:14px" class="small-note">手册 v3.2 与 11月3日的 v3.1 相比，只改了出分时间：从 22:30 提前到 21:30，其余权重未动。这条改动影响的是当晚的观赛节奏，不改变计分答案。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 精选推荐 -->
+    <section class="panel" id="picks" aria-labelledby="pkTitle">
+      <div class="sec-head">
+        <span class="sec-kicker">EDITORS' PICKS</span>
+        <h2 id="pkTitle">今日精选：第3轮值得打开的四件</h2>
+        <p>按“一眼看懂赛题、再看得出差距”的标准选的，不按人气排。评分与评语都来自 11月8日当天的公示页。</p>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <img src="https://picsum.photos/seed/riddle03/480/300" width="480" height="300" loading="lazy" alt="深秋命题赛第3轮赛场展示墙与评审席布置" style="object-fit:cover">
+          <div class="card-body">
+            <div class="card-meta"><span class="tag">第3轮</span><span>11-08 21:30 出分</span></div>
+            <h3><a href="/#latest">第3轮“限时结构题”42 份作品评分表</a></h3>
+            <p>最高分 91.5，最低有效分 58。分差主要落在“规范”一项，前五名里有三份规范满 10 分。</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://picsum.photos/seed/judgepanel/480/300" width="480" height="300" loading="lazy" alt="三名轮值评委围坐评审，桌面放着评分表与计时器" style="object-fit:cover">
+          <div class="card-body">
+            <div class="card-meta"><span class="tag">评审</span><span>11-07 公示</span></div>
+            <h3><a href="/#deep">评委怎样用否决权：本轮两次记录的复盘</a></h3>
+            <p>两次否决都发生在第 2 轮，理由都写满 120 字，但一次被复议推翻，一次维持。</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://picsum.photos/seed/player17/480/300" width="480" height="300" loading="lazy" alt="参赛者编号 17 的稿件终端与草稿笔记" style="object-fit:cover">
+          <div class="card-body">
+            <div class="card-meta"><span class="tag">选手</span><span>11-08</span></div>
+            <h3><a href="/#comments">17 号选手的连续三晚交稿节奏</a></h3>
+            <p>三晚都在 21:05 前后提交，时差不超过 4 分钟。评论区有人质疑“卡点”，也有人认为这是习惯。</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://picsum.photos/seed/replayroom/480/300" width="480" height="300" loading="lazy" alt="回放室大屏与现场座位，屏幕上显示第2轮分数曲线" style="object-fit:cover">
+          <div class="card-body">
+            <div class="card-meta"><span class="tag">回放</span><span>11-06 上线</span></div>
+            <h3><a href="/#guide">三场回顾场的观看顺序与回放入口</a></h3>
+            <p>第1轮 47 分钟、第2轮 52 分钟、第3轮待出片。先看回放再补赛题，理解成本能降一半。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 最新更新 -->
+    <section class="panel" id="latest" aria-labelledby="ltTitle">
+      <div class="sec-head">
+        <span class="sec-kicker">LIVE UPDATES</span>
+        <h2 id="ltTitle">最新赛果与时间点</h2>
+        <p>以小时为刻度的变化，只记有新事实的条目：改分、复议、退赛、加分细则。每条都带消息来源和时间。</p>
+      </div>
+      <ul class="tight-list">
+        <li>
+          <span class="time">11-08 21:30</span>
+          <span><span class="t-title">第3轮提交截止，42 份稿件进入评分</span><span class="t-desc">比第2轮少 3 份，官方说明有 2 人申请延期至 11月9日 12:00。</span></span>
+          <span class="src">赛事公示页</span>
+        </li>
+        <li>
+          <span class="time">11-08 20:15</span>
+          <span><span class="t-title">第3轮赛题补充说明：结构题允许使用旧稿改造</span><span class="t-desc">补充条款原文第 3 条：“改造部分须在稿件注明原始版本日期，未注明按新作评分。”</span></span>
+          <span class="src">评审纪要 · 陈砚舟</span>
+        </li>
+        <li>
+          <span class="time">11-08 18:40</span>
+          <span><span class="t-title">17 号选手第 3 轮稿件提前公开</span><span class="t-desc">比截止时间早 50 分钟，作者在个人页写明“留时间改，不留时间猜”。</span></span>
+          <span class="src">选手主页</span>
+        </li>
+        <li>
+          <span class="time">11-07 23:00</span>
+          <span><span class="t-title">第2轮复议结果：一次否决被推翻，分数回调 6 分</span><span class="t-desc">复议申请由 9 号选手提出，评委组以 2 比 1 通过，理由是“规范项扣分未写明细”。</span></span>
+          <span class="src">评审复议公告</span>
+        </li>
+        <li>
+          <span class="time">11-06 22:30</span>
+          <span><span class="t-title">第1轮总榜初版发布，后于 11月7日 09:00 修正 2 个名次</span><span class="t-desc">修正原因是录入顺序错误，分数未变，名次对调。</span></span>
+          <span class="src">榜单修订记录</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 频道分类 -->
+    <section class="panel" id="channels" aria-labelledby="chTitle">
+      <div class="sec-head">
+        <span class="sec-kicker">CHANNELS</span>
+        <h2 id="chTitle">按赛项进频道</h2>
+        <p>10 个频道，点进去都是同一套“赛题—稿件—评分—回放”结构，不需要再找入口。括号里是当前在册人数。</p>
+      </div>
+      <div class="tag-index">
+        <a href="/#latest">限时结构题 <b>42</b></a>
+        <a href="/#latest">命题提案赛 <b>38</b></a>
+        <a href="/#deep">评审规则解读 <b>16</b></a>
+        <a href="/#picks">第3轮作品集 <b>42</b></a>
+        <a href="/#guide">回放与观赛指南 <b>9</b></a>
+        <a href="/#rank">积分榜与名次变化 <b>24</b></a>
+        <a href="/#comments">选手与评委问答 <b>11</b></a>
+        <a href="/#faq">新手报名与赛程 <b>8</b></a>
+        <a href="/#timeline">赛程时间线 <b>7</b></a>
+        <a href="/#news">赛制调整记录 <b>5</b></a>
+      </div>
+    </section>
+
+    <!-- 深度解析 -->
+    <section class="panel deep" id="deep" aria-labelledby="dpTitle">
+      <div class="sec-head">
+        <span class="sec-kicker">IN-DEPTH</span>
+        <h2 id="dpTitle">一个判断：这轮分差不在手艺，在规则理解</h2>
+        <p>判断可以被反驳。下面把它拆成三块可核对的东西——时间线、分数分布，以及评委与选手的说法差异。</p>
+      </div>
+
+      <h3>第2轮到第3轮的分数变化：结构题把分差拉宽了</h3>
+      <p>第2轮“命题提案赛”42 份有效稿，分数区间 61—88，标准差 6.4；第3轮“限时结构题”同样 42 份，区间 58—91.5。表面看上限涨了 3.5 分，实际拉开差距的是下限：低于 65 分的稿件从第2轮的 4 份增至 9 份。所有降分稿件里，有 6 份在“规范”项被扣 4 分以上，而第2轮同类扣分只有 2 份。</p>
+      <table class="fact-table">
+        <caption>第2轮与第3轮分数对比（数据源：赛事公示页，11月7日 23:00 / 11月8日 21:30）</caption>
+        <thead>
+          <tr><th>指标</th><th>第2轮 命题提案赛</th><th>第3轮 限时结构题</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>有效稿</td><td class="num">42</td><td class="num">42</td></tr>
+          <tr><td>分数区间</td><td class="num">61—88</td><td class="num">58—91.5</td></tr>
+          <tr><td>低于 65 分</td><td class="num">4 份</td><td class="num">9 份</td></tr>
+          <tr><td>规范项扣 4 分以上</td><td class="num">2 份</td><td class="num">6 份</td></tr>
+          <tr><td>平均分</td><td class="num">74.8</td><td class="num">73.6</td></tr>
+        </tbody>
+      </table>
+      <p>平均分几乎没动，但尾部变厚。如果只盯着冠军分，会以为这轮变容易；把 65 分以下的稿件数摆出来，结论正好相反。</p>
+
+      <h3>评委的说法与选手的回应：差别在“改造要不要标注”</h3>
+      <p>陈砚舟在 11月8日 20:15 的补充说明里写：“改造旧稿不违规，但必须注明原始版本日期。”同一晚，17 号选手在个人页回应：“第3轮赛题原文没写这句，是开赛后补的。”两条说法对得上时间：补充说明 20:15 发布，提交截止 21:30，中间只有 1 小时 15 分。是否构成“追溯适用”，评委组没有单独公告。</p>
+      <div class="claim-box">
+        <span>“规范项扣分主要集中在未标注旧稿改造。”——评审纪要，11月8日 21:40</span>
+        <span class="verdict v-part">部分可核</span>
+      </div>
+      <div class="claim-box">
+        <span>“第3轮赛题原文没有标注要求，是补充条款新增的。”——17 号选手个人页，11月8日 21:05</span>
+        <span class="verdict v-true">可核对</span>
+      </div>
+      <div class="claim-box">
+        <span>“补充条款只影响个位数稿件。”——评审说明会现场问答，11月8日 20:50</span>
+        <span class="verdict v-open">尚无明细</span>
+      </div>
+
+      <blockquote>
+        “我们承认补充条款发得晚。评分时会看标注情况，不标注不等于直接扣满规范分，具体扣几分要写进明细。”
+        <cite>轮值评委 陈砚舟，11月8日 20:50 现场问答</cite>
+      </blockquote>
+
+      <h3>可被反驳的结论与核对方法</h3>
+      <p>结论是：第3轮的分差扩大，主要来自规范项的判读差异，而不是选题水平整体下降。核对方法有三步。第一步，打开 11月8日 21:30 的评分明细表，按“规范”列排序，看前 6 份被扣分的稿件是否都涉及旧稿改造标注。第二步，比对 11月8日 20:15 补充条款与赛题原文第 4 段，确认“标注”要求是否为新增。第三步，等 11月9日 12:00 的复议截止，看是否有选手就这条提出复议；提出数量会直接影响“只影响个位数”这一说法是否站得住。</p>
+      <p>反过来也成立：如果复议为零，或评委在明细里写清“未标注按惯例扣 2 分、非新规”，那“追溯适用”的说法就弱，分差更可能来自限时题本身对完成度的挤压。两种解释都留有余地，取决于 11月9日中午前的复议记录。</p>
+
+      <h3>时间线：规则改动与发布顺序</h3>
+      <ol class="timeline">
+        <li><span class="tl-time">11月3日 18:00</span><span class="tl-text">赛事手册 v3.1 发布，出分时间 22:30，无“改造标注”条款。</span></li>
+        <li><span class="tl-time">11月5日 12:00</span><span class="tl-text">第1轮发题，当日 21:30 截止，23:00 前出分。</span></li>
+        <li><span class="tl-time">11月6日 22:30</span><span class="tl-text">第1轮总榜初版发布。</span></li>
+        <li><span class="tl-time">11月7日 09:00</span><span class="tl-text">榜单修正 2 个名次，分数不变。</span></li>
+        <li><span class="tl-time">11月7日 23:00</span><span class="tl-text">第2轮出分，同日收到首份否决复议申请。</span></li>
+        <li><span class="tl-time">11月8日 20:15</span><span class="tl-text">第3轮补充条款发布，新增旧稿改造标注要求。</span></li>
+        <li><span class="tl-time">11月8日 21:30</span><span class="tl-text">第3轮提交截止，42 份稿件进入评分。</span></li>
+      </ol>
+    </section>
+
+    <!-- 体验指南 -->
+    <section class="panel" id="guide" aria-labelledby="gdTitle">
+      <div class="sec-head">
+        <span class="sec-kicker">HOW TO WATCH</span>
+        <h2 id="gdTitle">观赛与回放的五个步骤</h2>
+        <p>写给第一次进来的观众。按顺序做完，再看第3轮评分表不会卡住。回放按赛轮编号，不按上传时间排。</p>
+      </div>
+      <ol class="steps">
+        <li><b>先看当天的赛题原文，不看摘要</b>赛题原文在每一轮的详情页顶部，编号形如“深秋-R3”。摘要会略去补充条款，第3轮恰好就有。</li>
+        <li><b>对照评审细则的四项权重</b>完成度 40、表达 30、创新 20、规范 10。看分数先看这四列，再看总分，能看出失分点落在哪。</li>
+        <li><b>按编号找作品，不按姓名</b>所有作品以参赛编号展示，姓名只在选手主页出现。这样跨轮比较同一人时不会认错。</li>
+        <li><b>回放先看第1轮再看第3轮</b>第1轮 47 分钟，讲规则最多；第3轮是限时结构题，节奏最快。倒着看会漏掉术语定义。</li>
+        <li><b>遇到改分先读复议公告</b>改分都走复议流程，公告里会写申请人和评委票数。没有公告的改分，可以在评审邮箱提出询问。</li>
+      </ol>
+      <div class="compare" style="margin-top:18px">
+        <div class="a">
+          <h4>适合当晚追直播</h4>
+          <ul>
+            <li>想第一时间看分数曲线变化</li>
+            <li>关注选手的提交时间与卡点</li>
+            <li>能接受 21:30 后信息密集更新</li>
+          </ul>
+        </div>
+        <div class="b">
+          <h4>适合第二天看回放</h4>
+          <ul>
+            <li>主要想读懂赛题和评审逻辑</li>
+            <li>需要暂停比对评分明细</li>
+            <li>第2轮复议结果更值得等一天</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 积分榜 -->
+    <section class="panel" id="rank" aria-labelledby="rkTitle">
+      <div class="sec-head">
+        <span class="sec-kicker">STANDINGS</span>
+        <h2 id="rkTitle">累计积分榜前六（截至11月8日 21:30）</h2>
+        <p>累计分只用于终评总榜，不改变单题分数。名次后数字为三轮累计分，括号内为第3轮单轮名次。</p>
+      </div>
+      <ol class="rank">
+        <li class="top3"><span>17 号选手 · 结构题连交三晚</span><span class="rk-note">254.5（第3轮 第2）</span></li>
+        <li class="top3"><span>9 号选手 · 复议后回升</span><span class="rk-note">251.0（第3轮 第4）</span></li>
+        <li class="top3"><span>31 号选手 · 规范项满分开头</span><span class="rk-note">248.5（第3轮 第1）</span></li>
+        <li><span>5 号选手 · 提案赛强、结构题偏弱</span><span class="rk-note">237.0（第3轮 第9）</span></li>
+        <li><span>22 号选手 · 首轮缺席后追分</span><span class="rk-note">229.5（第3轮 第5）</span></li>
+        <li><span>46 号选手 · 新进前六</span><span class="rk-note">221.0（第3轮 第7）</span></li>
+      </ol>
+      <p class="small-note" style="margin-top:10px">31 号选手第3轮 91.5 分为本轮最高，规范项 10 分；其在第2轮排第 12 位，两轮落差 8 个名次。</p>
+    </section>
+
+    <!-- 相关资讯 -->
+    <section class="panel" id="news" aria-labelledby="nwTitle">
+      <div class="sec-head">
+        <span class="sec-kicker">NEWS</span>
+        <h2 id="nwTitle">赛制与规则的相关资讯</h2>
+        <p>四条与规则直接相关的变化，都带发布时间和发布方，方便回溯。</p>
+      </div>
+      <ul class="news-list">
+        <li>
+          <time datetime="2026-11-08">11月8日 20:15</time>
+          <h3>第3轮补充条款新增改造标注要求</h3>
+          <p>发布方为轮值评委组。原文第 3 条要求改造稿注明原始版本日期，未注明按新作评分。距提交截止 1 小时 15 分。</p>
+        </li>
+        <li>
+          <time datetime="2026-11-07">11月7日 23:00</time>
+          <h3>第2轮复议结果：否决被推翻，分数回调 6 分</h3>
+          <p>9 号选手申请，评委组 2 比 1 通过。理由写明“规范项扣分未列明细”，这是本季首次推翻否决。</p>
+        </li>
+        <li>
+          <time datetime="2026-11-07">11月7日 09:00</time>
+          <h3>第1轮总榜修正 2 个名次</h3>
+          <p>录入顺序错误导致名次对调，分数不变。修订记录保留在榜单页底部，可对照原表和修正表。</p>
+        </li>
+        <li>
+          <time datetime="2026-11-06">11月6日 18:30</time>
+          <h3>出分时间提前至 21:30</h3>
+          <p>手册 v3.2 相比 v3.1 的唯一改动。评审组说明原因是“当晚清算效率提高”，四项权重未动。</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- FAQ -->
+    <section class="panel" id="faq" aria-labelledby="fqTitle">
+      <div class="sec-head">
+        <span class="sec-kicker">FAQ</span>
+        <h2 id="fqTitle">关于赛制、观看与评分的常见问题</h2>
+        <p>问题按出现频率排，答案只写可核对的内容，涉及争议处注明信息来源。</p>
+      </div>
+      <details class="faq">
+        <summary>每日大赛在线观看每日大赛的直播一般几点开始，回放在哪里？</summary>
+        <div class="faq-a"><p>每日 20:30 开播，21:30 为提交截止并切到评分画面，通常 23:00 前结束。回放按赛轮编号上架，第1轮和第2轮分别在 11月6日、11月7日上线，第3轮回放排在 11月9日中午前。入口统一在“回放与观赛指南”频道。</p></div>
+      </details>
+      <details class="faq">
+        <summary>限时结构题的“规范 10 分”具体查什么？</summary>
+        <div class="faq-a"><p>查三项：结构层级是否清楚、引用来源是否标注、旧稿改造是否注明原始版本日期。前两项在手册 v3.2 第 4 节，第三项是 11月8日 20:15 补充条款新增。第3轮有 6 份稿件在这项被扣 4 分以上。</p></div>
+      </details>
+      <details class="faq">
+        <summary>被评委否决之后还能复议吗？走什么流程？</summary>
+        <div class="faq-a"><p>可以。否决须在次日 12:00 前书面说明理由，选手在公示后 24 小时内提交复议申请与对应截图，评委组三人投票，两票即可推翻。第2轮 9 号选手就是在这个流程里回调了 6 分。</p></div>
+      </details>
+      <details class="faq">
+        <summary>累计分和单题分是什么关系，会不会互相影响？</summary>
+        <div class="faq-a"><p>互不影响。单题分当晚清算并公示四项明细，累计分只用于 11月12日终评总榜。第2轮的复议回调只改了 9 号选手的累计分，没有改同轮其他人的单题分。</p></div>
+      </details>
+      <details class="faq">
+        <summary>第3轮的“旧稿改造标注”算不算事后加规则？</summary>
+        <div class="faq-a"><p>事实层面：补充条款 11月8日 20:15 发布，赛题原文没有这条要求，发布距截止 1 小时 15 分。评委组现场问答称“会看标注情况，不标注不等于直接扣满规范分”，但未给出具体扣分档。是否算追溯适用，要看 11月9日 12:00 前的复议记录。</p></div>
+      </details>
+      <details class="faq">
+        <summary>参赛编号和姓名怎么对应，跨轮比较会不会认错人？</summary>
+        <div class="faq-a"><p>编号全季不变，姓名只在选手主页出现。跨轮比较请以编号为准，例如 17 号选手在第1轮、第2轮、第3轮分别是第 9、第 3、第 2。榜单和评分表都以编号列首位。</p></div>
+      </details>
+      <details class="faq">
+        <summary>错过当晚直播，第二天补看应该按什么顺序？</summary>
+        <div class="faq-a"><p>先看赛题原文，再看回放，最后看评分明细表。第1轮回放讲规则最多，建议先补它；第2轮的复议公告值得单独读一遍，否则第3轮的部分扣分会看不懂。</p></div>
+      </details>
+    </section>
+
+    <!-- 评论 -->
+    <section class="panel" id="comments" aria-labelledby="cmTitle">
+      <div class="sec-head">
+        <span class="sec-kicker">COMMENTS</span>
+        <h2 id="cmTitle">观众与选手的留言</h2>
+        <p>节选 11月7日至 11月8日的公开留言，保留原措辞，允许批评。涉及具体条目的留言标注了对应内容。</p>
+      </div>
+      <div class="comment-list">
+        <div class="comment">
+          <div class="avatar" aria-hidden="true">阿</div>
+          <div>
+            <div class="c-head"><span class="c-name">阿砚不熬夜</span><span>11-08 21:47</span><span class="c-ref">第3轮评分表</span><span class="c-like">赞同 12</span></div>
+            <p class="c-body">31 号那份结构题拿 91.5 不意外，层级标题和引用格式一眼就干净。真正让我意外的是 5 号，提案赛前三，这轮结构题只到第 9，看完明细发现是规范扣了 5 分，还是老问题。</p>
+          </div>
+        </div>
+        <div class="comment">
+          <div class="avatar" aria-hidden="true">临</div>
+          <div>
+            <div class="c-head"><span class="c-name">临窗的猫</span><span>11-08 21:12</span><span class="c-ref">17 号选手提交时间</span><span class="c-like">赞同 5</span></div>
+            <p class="c-body">三晚都在 21:05 交稿，说不是卡点我不信。当然规则没禁止，可要是大家都这么算着时间交，评审压力会往最后半小时集中，第2轮就拖到 23:20 才出完分。</p>
+          </div>
+        </div>
+        <div class="comment">
+          <div class="avatar" aria-hidden="true">周</div>
+          <div>
+            <div class="c-head"><span class="c-name">周三下午茶</span><span>11-08 20:58</span><span class="c-ref">补充条款</span><span class="c-like">赞同 9</span></div>
+            <p class="c-body">补充条款 20:15 才发，21:30 截止，一小时十五分。哪怕内容是合理的，发得太晚也会让人怀疑。至少下一次应该把标注要求写进赛题原文，别靠补充说明补漏洞。</p>
+          </div>
+        </div>
+        <div class="comment">
+          <div class="avatar" aria-hidden="true">一</div>
+          <div>
+            <div class="c-head"><span class="c-name">一页纸</span><span>11-07 23:36</span><span class="c-ref">第2轮复议</span><span class="c-like">赞同 21</span></div>
+            <p class="c-body">2 比 1 推翻否决，这个结果我认。规范项扣分没写明细确实是评委组的疏漏，补 6 分不算多。但复议公告里没写另外两位评委的反对理由，这点挺可惜，透明的一半。</p>
+          </div>
+        </div>
+        <div class="comment">
+          <div class="avatar" aria-hidden="true">老</div>
+          <div>
+            <div class="c-head"><span class="c-name">老周看结构</span><span>11-07 18:20</span><span class="c-ref">第1轮名次修正</span><span class="c-like">赞同 3</span></div>
+            <p class="c-body">名次对调、分数不变，属于录入问题，修订记录写清楚了就行。比起这个，我更关心第1轮 47 分钟的回放能不能出逐条字幕，讲术语那段倒回去听了三次。</p>
+          </div>
+        </div>
+        <div class="comment">
+          <div class="avatar" aria-hidden="true">盒</div>
+          <div>
+            <div class="c-head"><span class="c-name">盒子里的风</span><span>11-08 22:03</span><span class="c-ref">累计积分榜</span><span class="c-like">赞同 7</span></div>
+            <p class="c-body">17 号累计 254.5 排第一，但单轮从没拿过第一，这种稳定型选手进终评挺有看头。31 号是天花板和地板都在，起伏大，总榜排第三还在射程内，11月12日那场有得比。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 相关推荐 -->
+    <section class="panel" id="related" aria-labelledby="rlTitle">
+      <div class="sec-head">
+        <span class="sec-kicker">RELATED</span>
+        <h2 id="rlTitle">相关推荐</h2>
+        <p>按你刚看过的内容延伸，都是同一赛程下的具体条目。</p>
+      </div>
+      <div class="tag-index">
+        <a href="/#deep">限时结构题评分标准拆解</a>
+        <a href="/#latest">第3轮 42 份作品评分明细</a>
+        <a href="/#guide">回放观看顺序与入口</a>
+        <a href="/#comments">17 号选手交稿节奏讨论</a>
+        <a href="/#news">11月8日补充条款原文</a>
+        <a href="/#rank">累计积分榜前六名单</a>
+        <a href="/#faq">否决与复议流程问题</a>
+        <a href="/#timeline">赛制调整时间线</a>
+        <a href="/#picks">第3轮值得打开的四件</a>
+      </div>
+    </section>
+
+    <!-- 补充板块：时间线/可信度分层 -->
+    <section class="panel" id="timeline" aria-labelledby="tlTitle">
+      <div class="sec-head">
+        <span class="sec-kicker">VERIFY</span>
+        <h2 id="tlTitle">信息可信度分层：同一件事的三种说法</h2>
+        <p>以“第3轮规范项扣分”为例，把已确认、待核实、仅转述三层分开。来源都可在公示页找到对应文本。</p>
+      </div>
+      <div class="claim-box">
+        <span>已确认：11月8日 20:15 的补充条款新增旧稿改造标注要求，发布距提交截止 1 小时 15 分。</span>
+        <span class="verdict v-true">事实</span>
+      </div>
+      <div class="claim-box">
+        <span>待核实：规范项被扣 4 分以上的 6 份稿件，是否全部与“未标注改造”相关。评分明细表 11月9日补全前无法逐份对上。</span>
+        <span class="verdict v-part">待核实</span>
+      </div>
+      <div class="claim-box">
+        <span>仅转述：有观众在留言里说“评审组内部事先讨论过这条”，没有记录或截图，评委组也未回应。</span>
+        <span class="verdict v-open">转述</span>
+      </div>
+      <p class="small-note" style="margin-top:12px">分层不等于下结论。事实层可直接引用，待核实层需等明细，转述层只作线索。第2轮复议的 6 分回调属于已确认项，公告和票数都在。</p>
+    </section>
+
+  </main>
+
+  <!-- 侧栏 -->
+  <aside class="sidebar" aria-label="侧栏导航与快捷入口">
+    <nav class="side-block" aria-label="栏目速查">
+      <h2>栏目速查</h2>
+      <div class="side-nav" id="sideNav">
+        <a href="/#overview">赛况概览</a>
+        <a href="/#picks">今日精选</a>
+        <a href="/#latest">最新赛果</a>
+        <a href="/#channels">频道分类</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">观赛指南</a>
+        <a href="/#rank">累计积分榜</a>
+        <a href="/#news">赛制资讯</a>
+        <a href="/#faq">常见问题</a>
+        <a href="/#comments">观众留言</a>
+        <a href="/#timeline">可信度分层</a>
+      </div>
+    </nav>
+    <div class="side-block">
+      <h2>今晚关键时间</h2>
+      <ul class="tight-list" style="font-size:13.5px">
+        <li style="grid-template-columns:auto 1fr"><span class="time">20:30</span><span class="t-title">直播开播</span></li>
+        <li style="grid-template-columns:auto 1fr"><span class="time">21:30</span><span class="t-title">提交截止</span></li>
+        <li style="grid-template-columns:auto 1fr"><span class="time">23:00</span><span class="t-title">评分公示</span></li>
+        <li style="grid-template-columns:auto 1fr;border-bottom:none"><span class="time">11-09</span><span class="t-title">12:00 复议截止</span></li>
+      </ul>
+    </div>
+    <div class="side-block">
+      <h2>热门检索词</h2>
+      <div class="mini-tag">
+        <a href="/#deep">限时结构题</a>
+        <a href="/#faq">否决权复议</a>
+        <a href="/#rank">累计积分榜</a>
+        <a href="/#news">补充条款</a>
+        <a href="/#guide">回放入口</a>
+        <a href="/#comments">17 号选手</a>
+      </div>
+    </div>
+    <div class="side-block">
+      <h2>观赛提醒</h2>
+      <p class="side-note">第3轮的评分明细表正在补全，11月9日中午前会附上每份稿件的四项分数。第2轮复议的完整票数记录已挂出，共 3 票，2 票赞成、1 票反对。</p>
+    </div>
+  </aside>
+</div>
+
+<!-- 页尾 -->
+<footer class="site-foot">
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">
+          <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#223a57"/>
+            <path d="M18 44V20h7l7 12 7-12h7v24h-6V30l-8 13-8-13v14z" fill="#f2b544"/>
+            <circle cx="49" cy="17" r="4" fill="#c8562b"/>
+          </svg>
+          <b>每日大赛</b>
+        </div>
+        <p class="foot-desc">把一季赛程按题拆开记录：赛题原文、评分明细、否决与复议、回放顺序，都在同一套编号下。</p>
+        <p class="foot-update">页面更新：2026-11-08 22:10 · 对应正文第3轮评分公示与补充条款条目</p>
+      </div>
+      <div class="foot-cols">
+        <div>
+          <h3>赛程</h3>
+          <ul>
+            <li><a href="/#latest">最新赛果</a></li>
+            <li><a href="/#timeline">赛制时间线</a></li>
+            <li><a href="/#rank">累计积分榜</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>阅读</h3>
+          <ul>
+            <li><a href="/#deep">深度解析</a></li>
+            <li><a href="/#guide">观赛指南</a></li>
+            <li><a href="/#faq">常见问题</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>互动</h3>
+          <ul>
+            <li><a href="/#comments">观众留言</a></li>
+            <li><a href="/#channels">频道分类</a></li>
+            <li><a href="/#related">相关推荐</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>示例数据说明：赛题、选手编号、评分与留言均为演示内容，截至 2026-11-08。</span>
+      <span>© 2026 每日大赛 观赛站 · 内容用于展示赛制结构</span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="回到顶部">↑</button>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"每日大赛在线观看每日大赛",
+  "description":"每日大赛赛程、赛果、评分明细与回放入口的观赛站。",
+  "inLanguage":"zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"每日大赛在线观看每日大赛的直播一般几点开始，回放在哪里？","acceptedAnswer":{"@type":"Answer","text":"每日20:30开播，21:30提交截止，通常23:00前结束。回放按赛轮编号上架，第1轮和第2轮分别在11月6日、11月7日上线，第3轮回放排在11月9日中午前。"}},
+    {"@type":"Question","name":"限时结构题的规范10分具体查什么？","acceptedAnswer":{"@type":"Answer","text":"查结构层级、引用来源标注、旧稿改造是否注明原始版本日期。第三项是11月8日20:15补充条款新增，第3轮有6份稿件在这项被扣4分以上。"}},
+    {"@type":"Question","name":"被评委否决之后还能复议吗？","acceptedAnswer":{"@type":"Answer","text":"可以。选手在公示后24小时内提交复议申请与截图，评委组三人投票，两票即可推翻。第2轮9号选手在此流程中回调6分。"}},
+    {"@type":"Question","name":"累计分和单题分是什么关系？","acceptedAnswer":{"@type":"Answer","text":"互不影响。单题分当晚清算并公示四项明细，累计分只用于11月12日终评总榜。"}},
+    {"@type":"Question","name":"第3轮的旧稿改造标注算不算事后加规则？","acceptedAnswer":{"@type":"Answer","text":"补充条款11月8日20:15发布，赛题原文没有该要求，距截止1小时15分。评委组称不会直接扣满规范分，具体扣分档未公布，需看11月9日12:00前的复议记录。"}}
+  ]
+}
+</script>
+
+<script>
+(function(){
+  var menuBtn=document.getElementById('menuBtn');
+  var mainNav=document.getElementById('mainNav');
+  var toTop=document.getElementById('toTop');
+  var searchInput=document.getElementById('siteSearch');
+  var feedback=document.getElementById('searchFeedback');
+  var navLinks=mainNav.querySelectorAll('a');
+
+  /* 移动端菜单 */
+  if(menuBtn&&mainNav){
+    menuBtn.addEventListener('click',function(){
+      var open=mainNav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded',open?'true':'false');
+    });
+    navLinks.forEach(function(a){
+      a.addEventListener('click',function(){
+        if(window.innerWidth<=960){
+          mainNav.classList.remove('open');
+          menuBtn.setAttribute('aria-expanded','false');
+        }
+      });
+    });
+  }
+
+  /* 回到顶部 */
+  function onScroll(){
+    if(window.scrollY>420){toTop.classList.add('show');}else{toTop.classList.remove('show');}
+    highlight();
+  }
+  if(toTop){
+    toTop.addEventListener('click',function(){
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+  }
+
+  /* 侧栏滚动高亮 */
+  var sideLinks=document.querySelectorAll('#sideNav a');
+  var targets=[];
+  sideLinks.forEach(function(a){
+    var id=a.getAttribute('href').replace('/#','');
+    var el=document.getElementById(id);
+    if(el){targets.push({link:a,el:el});}
+  });
+  function highlight(){
+    var pos=window.scrollY+140;
+    var current=null;
+    targets.forEach(function(t){
+      if(t.el.offsetTop<=pos){current=t;}
+    });
+    targets.forEach(function(t){
+      t.link.classList.toggle('active',t===current);
+    });
+  }
+
+  /* 本地搜索 */
+  var pages=[
+    {t:'赛况概览',id:'overview',k:'七题七日 赛制 权重 出分时间 手册v3.2'},
+    {t:'今日精选',id:'picks',k:'第3轮 限时结构题 作品 评委 否决 回放'},
+    {t:'最新赛果',id:'latest',k:'提交截止 补充条款 17号选手 复议 榜单修正'},
+    {t:'频道分类',id:'channels',k:'限时结构题 命题提案赛 评审规则 积分榜'},
+    {t:'深度解析',id:'deep',k:'分数分布 规范项 旧稿改造 复议 时间线'},
+    {t:'观赛指南',id:'guide',k:'回放 步骤 直播 第二天补看 评分明细'},
+    {t:'累计积分榜',id:'rank',k:'17号 9号 31号 5号 22号 46号 累计分'},
+    {t:'赛制资讯',id:'news',k:'补充条款 复议 推翻否决 出分时间提前'},
+    {t:'常见问题',id:'faq',k:'直播几点 规范分 复议流程 累计分 编号'},
+    {t:'观众留言',id:'comments',k:'31号 5号 17号 2比1 修订记录'},
+    {t:'相关推荐',id:'related',k:'评分标准 回放入口 时间线'},
+    {t:'可信度分层',id:'timeline',k:'已确认 待核实 转述 截图'}
+  ];
+  if(searchInput&&feedback){
+    searchInput.addEventListener('input',function(){
+      var q=searchInput.value.trim().toLowerCase();
+      if(!q){feedback.classList.remove('show');feedback.innerHTML='';return;}
+      var hits=pages.filter(function(p){
+        return p.t.toLowerCase().indexOf(q)>-1||p.k.toLowerCase().indexOf(q)>-1;
+      });
+      if(hits.length===0){
+        feedback.innerHTML='未找到与 <strong>'+escapeHTML(searchInput.value.trim())+'</strong> 相关的内容，试试“结构题”“复议”“积分榜”。';
+      }else{
+        feedback.innerHTML='找到 '+hits.length+' 个栏目：'+hits.slice(0,4).map(function(p){
+          return '<a href="/#'+p.id+'" style="color:#c8562b;text-decoration:underline">'+p.t+'</a>';
+        }).join('、');
+      }
+      feedback.classList.add('show');
+    });
+    document.addEventListener('click',function(e){
+      if(!e.target.closest('.search-wrap')){feedback.classList.remove('show');}
+    });
+    searchInput.addEventListener('keydown',function(e){
+      if(e.key==='Escape'){feedback.classList.remove('show');searchInput.blur();}
+    });
+  }
+  function escapeHTML(s){return s.replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll);
+  onScroll();
+})();
+</script>
+</body>
+  </html>
